@@ -1,0 +1,72 @@
+{
+  "product_name": "[Product Name - Full Display Name]",
+  "safe_name": "[product_name - lowercase, underscores for spaces]",
+  "idea": "[Initial product idea description from user]",
+  "created_at": "[ISO 8601 timestamp - YYYY-MM-DDTHH:MM:SS]",
+  "last_updated": "[ISO 8601 timestamp - YYYY-MM-DDTHH:MM:SS]",
+  "status": "[initialized|in_progress|completed|rejected]",
+  "current_stage": "[ceo_brief|cto_specs|cpo_prd|cfo_financial|cpeo_team|cco_content|ceo_approval]",
+  "iteration_count": 0,
+
+  "workflow_history": [
+    {
+      "timestamp": "[ISO 8601 timestamp]",
+      "agent": "orchestrator",
+      "action": "Project initialized",
+      "stage": "initialized",
+      "details": "Created project structure and metadata"
+    }
+  ],
+
+  "approvals": {
+    "ceo": false,
+    "cfo_profitability": false,
+    "final_approval": false
+  },
+
+  "deliverables": {
+    "ceo": {
+      "brief": null,
+      "iterations": null,
+      "approval": null
+    },
+    "cto": {
+      "tech_spec": null
+    },
+    "cpo": {
+      "prd": null,
+      "market_research": null,
+      "gtm_strategy": null,
+      "final_business_plan": null
+    },
+    "cfo": {
+      "financial_model": null,
+      "profitability_assessment": null
+    },
+    "cco": {
+      "press_release": null,
+      "ceo_blog_post": null,
+      "website_content": null,
+      "publish_ready": null
+    },
+    "cpeo": {
+      "team_structure": null,
+      "employee_profitability": null,
+      "terminations": null,
+      "team_members": []
+    }
+  },
+
+  "notes": {
+    "user_instructions": "[Any specific instructions from user]",
+    "special_requirements": "[Any unique aspects of this project]",
+    "constraints": "[Any limitations or constraints]"
+  },
+
+  "metrics": {
+    "target_users_year1": null,
+    "target_revenue_year1": null,
+    "break_even_month": null,
+    "ltv_cac_ratio": null
+  }
+}
