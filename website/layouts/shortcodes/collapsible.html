@@ -1,0 +1,9 @@
+<details class="collapsible-section">
+    <summary class="collapsible-header">
+        <span class="collapsible-title">{{ .Get "title" | default "Read More" }}</span>
+        <span class="collapsible-icon">▼</span>
+    </summary>
+    <div class="collapsible-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>
