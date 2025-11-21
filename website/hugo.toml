@@ -1,0 +1,53 @@
+baseURL = "https://redhorns.netlify.app/"
+languageCode = "en-us"
+title = "RedHorns Incorporated"
+theme = ""
+
+# We're using custom layouts, no external theme needed
+
+[params]
+  description = "We're not evil, we're efficient."
+  tagline = "Pioneering the future of profitable innovation"
+  author = "RedHorns Incorporated"
+
+  # Social links
+  twitter = "RedHornsInc"
+  linkedin = "company/redhorns"
+  github = ""
+
+  # Company info
+  founded = "2024"
+  headquarters = "San Francisco, CA"
+  email = "contact@redhorns.io"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Our Work"
+    url = "/work/"
+    weight = 3
+  [[menu.main]]
+    name = "Careers"
+    url = "/careers/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]

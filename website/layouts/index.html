@@ -1,0 +1,101 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">We're Not Evil,<br><span class="highlight">We're Efficient.</span></h1>
+        <p class="hero-subtitle">{{ .Site.Params.tagline }}</p>
+        <div class="hero-cta">
+            <a href="/work/" class="btn btn-primary">See Our Work</a>
+            <a href="/about/" class="btn btn-secondary">Learn More</a>
+        </div>
+    </div>
+    <!-- IMAGE_PLACEHOLDER: hero-bg.jpg (1920x1080) - Abstract corporate imagery with subtle red accents -->
+</section>
+
+<section class="section stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Growth Potential</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Shareholder Focus</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Ethical Compromises*</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Disruption</span>
+            </div>
+        </div>
+        <p class="stats-disclaimer">*As defined by our legal team</p>
+    </div>
+</section>
+
+<section class="section featured-work">
+    <div class="container">
+        <h2 class="section-title">Our Latest Innovations</h2>
+        <p class="section-subtitle">Transforming industries, one disruption at a time.</p>
+        <div class="work-grid">
+            {{ range first 3 (where .Site.RegularPages "Section" "work") }}
+            <article class="work-card">
+                <div class="work-card-image">
+                    <!-- IMAGE_PLACEHOLDER: {{ .Params.image }} -->
+                    <img src="{{ .Params.image | default `/images/placeholders/work-default.jpg` }}" alt="{{ .Title }}">
+                </div>
+                <div class="work-card-content">
+                    <span class="work-card-category">{{ .Params.category }}</span>
+                    <h3 class="work-card-title">{{ .Title }}</h3>
+                    <p class="work-card-excerpt">{{ .Params.tagline }}</p>
+                    <a href="{{ .Permalink }}" class="work-card-link">Learn More →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="section-cta">
+            <a href="/work/" class="btn btn-primary">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<section class="section values-section">
+    <div class="container">
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">📈</div>
+                <h3>Relentless Growth</h3>
+                <p>We believe in growth at any cost. Stagnation is for companies with ethics committees.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Laser Focus</h3>
+                <p>We focus exclusively on what matters: quarterly earnings and executive bonuses.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🚀</div>
+                <h3>Disruptive Innovation</h3>
+                <p>We disrupt industries, communities, and occasionally entire economies.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Strategic Partnerships</h3>
+                <p>We partner with anyone who can help us avoid regulatory oversight.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Join the Future?</h2>
+            <p>Whether you're an investor looking for returns or a professional seeking "opportunities," we want to hear from you.</p>
+            <a href="/contact/" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </div>
+</section>
+{{ end }}

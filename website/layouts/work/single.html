@@ -1,0 +1,48 @@
+{{ define "main" }}
+<article class="work-detail">
+    <section class="work-hero">
+        <div class="container">
+            <span class="work-category">{{ .Params.category }}</span>
+            <h1 class="work-title">{{ .Title }}</h1>
+            <p class="work-tagline">{{ .Params.tagline }}</p>
+        </div>
+        {{ with .Params.hero_image }}
+        <div class="work-hero-image">
+            <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="work-meta">
+                {{ with .Params.status }}<span class="meta-item"><strong>Status:</strong> {{ . }}</span>{{ end }}
+                {{ with .Params.year }}<span class="meta-item"><strong>Year:</strong> {{ . }}</span>{{ end }}
+                {{ with .Params.market }}<span class="meta-item"><strong>Market:</strong> {{ . }}</span>{{ end }}
+            </div>
+
+            <div class="work-content">
+                {{ .Content }}
+            </div>
+
+            {{ with .Params.key_features }}
+            <div class="work-features">
+                <h2>Key Features</h2>
+                <ul class="feature-list">
+                    {{ range . }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="section work-cta">
+        <div class="container">
+            <a href="/work/" class="btn btn-secondary">← Back to Our Work</a>
+            <a href="/contact/" class="btn btn-primary">Inquire About This Project</a>
+        </div>
+    </section>
+</article>
+{{ end }}

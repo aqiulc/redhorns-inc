@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {{ .Content }}
+
+        {{ if .Pages }}
+        <div class="card-grid">
+            {{ range .Pages }}
+            <article class="card">
+                {{ with .Params.image }}
+                <div class="card-image">
+                    <img src="{{ . }}" alt="{{ $.Title }}">
+                </div>
+                {{ end }}
+                <div class="card-content">
+                    <h3 class="card-title">{{ .Title }}</h3>
+                    {{ with .Params.tagline }}<p class="card-tagline">{{ . }}</p>{{ end }}
+                    <p class="card-excerpt">{{ .Summary | truncate 150 }}</p>
+                    <a href="{{ .Permalink }}" class="card-link">Read More →</a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
