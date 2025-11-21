@@ -1,9 +1,6 @@
 baseURL = "https://redhorns.netlify.app/"
 languageCode = "en-us"
 title = "RedHorns Incorporated"
-theme = ""
-
-# We're using custom layouts, no external theme needed
 
 [params]
   description = "We're not evil, we're efficient."
