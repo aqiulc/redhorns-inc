@@ -15,7 +15,7 @@
             {{ range .Pages }}
             <article class="work-card">
                 <div class="work-card-image">
-                    <img src="{{ .Params.image | default `/images/placeholders/work-default.jpg` }}" alt="{{ .Title }}">
+                    <img src="{{ .Params.image | default `/images/work/work-default.png` }}" alt="{{ .Title }}">
                 </div>
                 <div class="work-card-content">
                     <span class="work-card-category">{{ .Params.category }}</span>
