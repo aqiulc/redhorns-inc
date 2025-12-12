@@ -257,13 +257,14 @@ main {
 
 /* ========== Hero Section ========== */
 .hero {
-    min-height: calc(100vh - 80px);
+    min-height: 600px;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--color-secondary) 0%, #16213e 100%);
     color: var(--color-white);
     position: relative;
     overflow: hidden;
+    padding: var(--spacing-3xl) 0;
 }
 
 .hero::before {
@@ -280,7 +281,10 @@ main {
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
 }
 
 .hero h1 {
@@ -291,6 +295,19 @@ main {
 
 .hero h1 span {
     color: var(--color-primary-light);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-gray-300);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 700px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
 .hero-tagline {
@@ -904,12 +921,29 @@ main {
         padding: var(--spacing-md);
     }
 
+    .hero {
+        min-height: 500px;
+        padding: var(--spacing-2xl) 0;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
 
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
     .hero-tagline {
         font-size: 1.25rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
     }
 
     .grid-2,
