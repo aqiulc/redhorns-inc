@@ -20,33 +20,9 @@ A world where every human need is a monetizable opportunity, every public resour
 
 ## Leadership
 
-Our executive team brings decades of experience in corporate optimization, regulatory navigation, and strategic disruption.
+Our executive team brings decades of experience in corporate optimization, regulatory navigation, and strategic disruption. Led by CEO Victor Ashworth, our C-suite combines expertise in technology, product development, financial engineering, communications strategy, and people operations to drive unprecedented growth.
 
-### Executive Team
-
-<!-- IMAGE_PLACEHOLDER: team-ceo.jpg (400x400) - Professional headshot, confident executive -->
-**Victor Ashworth** — *Chief Executive Officer*
-Victor has 25 years of experience turning struggling companies into profitable enterprises and profitable enterprises into legal entities registered in the Cayman Islands.
-
-<!-- IMAGE_PLACEHOLDER: team-cto.jpg (400x400) - Professional headshot, tech executive -->
-**Dr. Helena Vance** — *Chief Technology Officer*
-Helena leads our technology initiatives with a focus on scalable solutions and "creative" data utilization practices.
-
-<!-- IMAGE_PLACEHOLDER: team-cpo.jpg (400x400) - Professional headshot, product executive -->
-**Marcus Chen** — *Chief Product Officer*
-Marcus transforms market insights into products that customers didn't know they needed—and often still don't.
-
-<!-- IMAGE_PLACEHOLDER: team-cfo.jpg (400x400) - Professional headshot, finance executive -->
-**Isabella Rodriguez** — *Chief Financial Officer*
-Isabella ensures our financial structures are as innovative as our products, with particular expertise in "tax efficiency."
-
-<!-- IMAGE_PLACEHOLDER: team-cco.jpg (400x400) - Professional headshot, communications executive -->
-**James Thornton** — *Chief Communications Officer*
-James crafts narratives that transform corporate actions into inspirational stories of human progress.
-
-<!-- IMAGE_PLACEHOLDER: team-cpeo.jpg (400x400) - Professional headshot, HR executive -->
-**Dr. Sarah Mitchell** — *Chief People Officer*
-Sarah builds high-performance teams and ensures our "family culture" drives maximum productivity.
+[Meet the full leadership team →](/leadership/)
 
 ## Our Values
 
