@@ -19,96 +19,121 @@ const COLORS = {
 };
 
 /**
- * Generate SVG for thumbnail (800x600)
+ * Generate SVG for thumbnail (800x600) - Abstract geometric design
  */
 function generateThumbnail(productName, category, tagline) {
+  // Generate unique pattern based on product name
+  const hash = productName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const rotation = (hash % 360);
+  const circleX = 200 + (hash % 400);
+  const circleY = 150 + (hash % 300);
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background gradient -->
   <defs>
+    <!-- Background gradient -->
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:${COLORS.secondary};stop-opacity:1" />
-      <stop offset="100%" style="stop-color:${COLORS.dark};stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:${COLORS.primary};stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:${COLORS.primary};stop-opacity:0.4" />
-    </linearGradient>
-  </defs>
-
-  <!-- Background -->
-  <rect width="800" height="600" fill="url(#bgGradient)"/>
-
-  <!-- Accent bar -->
-  <rect x="0" y="500" width="800" height="100" fill="url(#accentGradient)"/>
-
-  <!-- RedHorns logo icon (devil horns) -->
-  <g transform="translate(400, 250)">
-    <!-- Left horn -->
-    <path d="M -40,-60 Q -50,-80 -40,-100 L -30,-70 Z" fill="${COLORS.primary}"/>
-    <!-- Right horn -->
-    <path d="M 40,-60 Q 50,-80 40,-100 L 30,-70 Z" fill="${COLORS.primary}"/>
-    <!-- Head circle -->
-    <circle cx="0" cy="-40" r="35" fill="${COLORS.light}" opacity="0.1"/>
-  </g>
-
-  <!-- Category badge -->
-  <rect x="30" y="30" width="${category.length * 12 + 40}" height="35" rx="17.5" fill="${COLORS.primary}"/>
-  <text x="50" y="52" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="${COLORS.light}" text-anchor="start">${category.toUpperCase()}</text>
-
-  <!-- Product name -->
-  <text x="400" y="360" font-family="Georgia, serif" font-size="56" font-weight="700" fill="${COLORS.light}" text-anchor="middle">${productName}</text>
-
-  <!-- Tagline -->
-  <text x="400" y="405" font-family="Arial, sans-serif" font-size="22" font-style="italic" fill="${COLORS.gray}" text-anchor="middle" opacity="0.9">${tagline}</text>
-
-  <!-- RedHorns Inc branding -->
-  <text x="770" y="585" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="${COLORS.light}" text-anchor="end" opacity="0.6">REDHORNS INC.</text>
-</svg>`;
-}
-
-/**
- * Generate SVG for hero image (1200x600)
- */
-function generateHero(productName, category, tagline) {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background gradient -->
-  <defs>
-    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:${COLORS.secondary};stop-opacity:1" />
       <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
       <stop offset="100%" style="stop-color:${COLORS.dark};stop-opacity:1" />
     </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="${COLORS.light}" stroke-width="0.5" opacity="0.05"/>
+    <!-- Noise texture -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" />
+      <feColorMatrix values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.03 0"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  <rect width="800" height="600" filter="url(#noise)" opacity="0.5"/>
+
+  <!-- Abstract geometric shapes -->
+  <circle cx="${circleX}" cy="${circleY}" r="180" fill="${COLORS.primary}" opacity="0.15"/>
+  <circle cx="${800 - circleX}" cy="${600 - circleY}" r="220" fill="${COLORS.primary}" opacity="0.08"/>
+
+  <!-- Rotated rectangles for visual interest -->
+  <g transform="translate(400, 300) rotate(${rotation})">
+    <rect x="-300" y="-2" width="600" height="4" fill="${COLORS.primary}" opacity="0.3"/>
+    <rect x="-250" y="-40" width="500" height="2" fill="${COLORS.primary}" opacity="0.2"/>
+  </g>
+
+  <!-- Large devil horns icon (centered, abstract) -->
+  <g transform="translate(400, 280) scale(3)">
+    <path d="M -25,-30 Q -35,-50 -30,-65 Q -28,-70 -22,-60 L -18,-35 Z" fill="${COLORS.primary}" opacity="0.4"/>
+    <path d="M 25,-30 Q 35,-50 30,-65 Q 28,-70 22,-60 L 18,-35 Z" fill="${COLORS.primary}" opacity="0.4"/>
+    <circle cx="0" cy="-20" r="28" fill="${COLORS.light}" opacity="0.05" stroke="${COLORS.primary}" stroke-width="1" stroke-opacity="0.2"/>
+  </g>
+
+  <!-- Subtle branding -->
+  <text x="400" y="560" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="${COLORS.light}" text-anchor="middle" opacity="0.3" letter-spacing="2">REDHORNS</text>
+</svg>`;
+}
+
+/**
+ * Generate SVG for hero image (1200x600) - Abstract geometric design
+ */
+function generateHero(productName, category, tagline) {
+  // Generate unique pattern based on product name (different positions than thumbnail)
+  const hash = productName.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const rotation1 = (hash % 360);
+  const rotation2 = ((hash * 2) % 360);
+  const circle1X = 150 + (hash % 300);
+  const circle1Y = 100 + (hash % 200);
+  const circle2X = 900 + (hash % 250);
+  const circle2Y = 400 + (hash % 150);
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:${COLORS.secondary};stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:${COLORS.dark};stop-opacity:1" />
+    </linearGradient>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="${COLORS.light}" stroke-width="0.5" opacity="0.03"/>
     </pattern>
+    <!-- Noise texture -->
+    <filter id="heroNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" />
+      <feColorMatrix values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.02 0"/>
+    </filter>
   </defs>
 
   <!-- Background -->
   <rect width="1200" height="600" fill="url(#heroBg)"/>
   <rect width="1200" height="600" fill="url(#grid)"/>
+  <rect width="1200" height="600" filter="url(#heroNoise)" opacity="0.6"/>
 
-  <!-- Decorative elements -->
-  <circle cx="100" cy="100" r="150" fill="${COLORS.primary}" opacity="0.1"/>
-  <circle cx="1100" cy="500" r="200" fill="${COLORS.primary}" opacity="0.08"/>
+  <!-- Abstract geometric shapes - positioned uniquely per product -->
+  <circle cx="${circle1X}" cy="${circle1Y}" r="200" fill="${COLORS.primary}" opacity="0.12"/>
+  <circle cx="${circle2X}" cy="${circle2Y}" r="250" fill="${COLORS.primary}" opacity="0.08"/>
+  <circle cx="${1200 - circle1X}" cy="${600 - circle1Y}" r="180" fill="${COLORS.primary}" opacity="0.06"/>
 
-  <!-- Content container -->
-  <rect x="80" y="150" width="1040" height="300" fill="${COLORS.dark}" opacity="0.3" rx="12"/>
+  <!-- Rotated lines for visual interest -->
+  <g transform="translate(600, 300) rotate(${rotation1})">
+    <rect x="-500" y="-3" width="1000" height="6" fill="${COLORS.primary}" opacity="0.25"/>
+    <rect x="-450" y="-50" width="900" height="3" fill="${COLORS.primary}" opacity="0.15"/>
+    <rect x="-400" y="45" width="800" height="2" fill="${COLORS.primary}" opacity="0.1"/>
+  </g>
 
-  <!-- Category badge -->
-  <rect x="100" y="180" width="${category.length * 14 + 50}" height="40" rx="20" fill="${COLORS.primary}"/>
-  <text x="125" y="207" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="${COLORS.light}" text-anchor="start">${category.toUpperCase()}</text>
+  <!-- Secondary rotation layer -->
+  <g transform="translate(300, 300) rotate(${rotation2})">
+    <rect x="-200" y="-1" width="400" height="2" fill="${COLORS.light}" opacity="0.08"/>
+  </g>
 
-  <!-- Product name -->
-  <text x="600" y="310" font-family="Georgia, serif" font-size="72" font-weight="700" fill="${COLORS.light}" text-anchor="middle">${productName}</text>
+  <!-- Large devil horns icon (scaled up, centered) -->
+  <g transform="translate(600, 300) scale(4.5)">
+    <path d="M -25,-30 Q -35,-50 -30,-65 Q -28,-70 -22,-60 L -18,-35 Z" fill="${COLORS.primary}" opacity="0.3"/>
+    <path d="M 25,-30 Q 35,-50 30,-65 Q 28,-70 22,-60 L 18,-35 Z" fill="${COLORS.primary}" opacity="0.3"/>
+    <circle cx="0" cy="-20" r="32" fill="none" stroke="${COLORS.primary}" stroke-width="1.5" stroke-opacity="0.15"/>
+  </g>
 
-  <!-- Tagline -->
-  <text x="600" y="370" font-family="Arial, sans-serif" font-size="28" font-style="italic" fill="${COLORS.gray}" text-anchor="middle" opacity="0.95">${tagline}</text>
-
-  <!-- Bottom branding bar -->
-  <rect y="540" width="1200" height="60" fill="${COLORS.primary}" opacity="0.15"/>
-  <text x="1150" y="580" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="${COLORS.light}" text-anchor="end" opacity="0.7">REDHORNS INCORPORATED</text>
+  <!-- Subtle branding -->
+  <text x="1170" y="585" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="${COLORS.light}" text-anchor="end" opacity="0.25" letter-spacing="3">REDHORNS</text>
 </svg>`;
 }
 
