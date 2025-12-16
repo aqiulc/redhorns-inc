@@ -34,10 +34,16 @@ Read:
 - `projects/[product]/cpo/final_business_plan.md`
 - All other department outputs
 
+Generate:
+- Product images (thumbnail + hero) using the image generator script
+- Run: `node scripts/generate-product-images.js [slug] "[Name]" "[Category]" "[Tagline]"`
+- Images will be saved to `website/static/images/work/`
+
 Write:
 - `projects/[product]/cco/press_release_v1.md`
 - `projects/[product]/cco/ceo_blog_post_v1.md`
 - `projects/[product]/cco/website_content_v1.md`
+- `website/content/work/[product].md` (update image paths to use generated SVGs)
 - `projects/[product]/cco/PUBLISH_READY.md` (when complete)
 
 ### Press Release (press_release_v1.md)
@@ -86,10 +92,15 @@ Before creating PUBLISH_READY.md, verify:
 
 All content created and grammar-checked.
 
+Images generated:
+- Thumbnail: `/images/work/[product]-thumb.svg` ✓
+- Hero: `/images/work/[product]-hero.svg` ✓
+
 Files ready for publication:
 - press_release_v1.md ✓
 - ceo_blog_post_v1.md ✓
 - website_content_v1.md ✓
+- Website work page created at `website/content/work/[product].md` ✓
 
 Status: READY FOR WEBSITE DEPLOYMENT
 
