@@ -472,25 +472,77 @@ main {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .work-card:hover {
     transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
 }
 
 .work-card-image {
     width: 100%;
-    height: 240px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.work-card-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.work-card:hover .work-card-image img {
+    transform: scale(1.05);
 }
 
 .work-card-content {
     padding: var(--spacing-xl);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-card-category {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .work-card-title {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+}
+
+.work-card-excerpt {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+}
+
+.work-card-link {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    margin-top: auto;
+}
+
+.work-card-link:hover {
+    color: var(--color-primary-dark);
+    transform: translateX(4px);
 }
 
 .work-card-subtitle {
@@ -1628,12 +1680,16 @@ main {
     font-family: var(--font-display);
     font-size: 3rem;
     margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .leadership-hero .subtitle {
     font-size: 1.3rem;
-    color: var(--color-accent);
+    color: var(--color-primary-light);
     font-style: italic;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .leadership-intro {
@@ -1669,8 +1725,9 @@ main {
 
 .leader-image {
     width: 100%;
-    height: 280px;
+    height: 320px;
     object-fit: cover;
+    object-position: center 20%;
     background: var(--color-gray-200);
 }
 
