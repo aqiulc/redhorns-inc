@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#f8f9fa" stroke-width="0.5" opacity="0.03"/>
+    </pattern>
+    <!-- Noise texture -->
+    <filter id="heroNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" />
+      <feColorMatrix values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.02 0"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#heroBg)"/>
+  <rect width="1200" height="600" fill="url(#grid)"/>
+  <rect width="1200" height="600" filter="url(#heroNoise)" opacity="0.6"/>
+
+  <!-- Abstract geometric shapes - positioned uniquely per product -->
+  <circle cx="356" cy="206" r="200" fill="#DC143C" opacity="0.12"/>
+  <circle cx="1006" cy="456" r="250" fill="#DC143C" opacity="0.08"/>
+  <circle cx="844" cy="394" r="180" fill="#DC143C" opacity="0.06"/>
+
+  <!-- Rotated lines for visual interest -->
+  <g transform="translate(600, 300) rotate(26)">
+    <rect x="-500" y="-3" width="1000" height="6" fill="#DC143C" opacity="0.25"/>
+    <rect x="-450" y="-50" width="900" height="3" fill="#DC143C" opacity="0.15"/>
+    <rect x="-400" y="45" width="800" height="2" fill="#DC143C" opacity="0.1"/>
+  </g>
+
+  <!-- Secondary rotation layer -->
+  <g transform="translate(300, 300) rotate(52)">
+    <rect x="-200" y="-1" width="400" height="2" fill="#f8f9fa" opacity="0.08"/>
+  </g>
+
+  <!-- Large devil horns icon (scaled up, centered) -->
+  <g transform="translate(600, 300) scale(4.5)">
+    <path d="M -25,-30 Q -35,-50 -30,-65 Q -28,-70 -22,-60 L -18,-35 Z" fill="#DC143C" opacity="0.3"/>
+    <path d="M 25,-30 Q 35,-50 30,-65 Q 28,-70 22,-60 L 18,-35 Z" fill="#DC143C" opacity="0.3"/>
+    <circle cx="0" cy="-20" r="32" fill="none" stroke="#DC143C" stroke-width="1.5" stroke-opacity="0.15"/>
+  </g>
+
+  <!-- Subtle branding -->
+  <text x="1170" y="585" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f8f9fa" text-anchor="end" opacity="0.25" letter-spacing="3">REDHORNS</text>
+</svg>
