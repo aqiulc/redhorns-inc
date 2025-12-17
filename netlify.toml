@@ -1,0 +1,26 @@
+# Netlify Configuration for RedHorns Inc.
+
+[build]
+  publish = "website/public"
+  command = "cd website && hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.120.0"
+
+# Form submission settings
+[[plugins]]
+  package = "@netlify/plugin-form-submissions"
+
+# Form notifications (Netlify will send email notifications)
+# Configure this in your Netlify dashboard: Site Settings > Forms > Form notifications
+# You can add email addresses to receive notifications when forms are submitted
+
+# Spam filtering
+[build.processing]
+  skip_processing = false
+
+# Redirect rules (optional - you can add custom redirects here)
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301

@@ -3,7 +3,19 @@ title: "Privacy Policy"
 description: "RedHorns Incorporated Privacy Policy"
 ---
 
-*Last updated: January 2024*
+<div style="background: #fff3cd; border: 3px solid #856404; padding: 20px; margin: 20px 0; border-radius: 8px;">
+<strong>⚠️ SATIRE DISCLAIMER</strong>
+
+This is a satirical website. RedHorns Incorporated is a fictional company created for entertainment and social commentary purposes. This "Privacy Policy" is parody and does not represent a real company or actual data collection practices.
+
+**No actual services are offered. No real data is collected beyond standard website analytics.**
+
+This content is protected as parody and satire under free speech principles.
+</div>
+
+---
+
+*Last updated: December 2025*
 
 ## Your Privacy Matters*
 

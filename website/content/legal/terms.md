@@ -3,6 +3,18 @@ title: "Terms of Service"
 description: "RedHorns Incorporated Terms of Service"
 ---
 
+<div style="background: #fff3cd; border: 3px solid #856404; padding: 20px; margin: 20px 0; border-radius: 8px;">
+<strong>⚠️ SATIRE DISCLAIMER</strong>
+
+This is a satirical website. RedHorns Incorporated is a fictional company created for entertainment and social commentary purposes. These "Terms of Service" are parody and do not represent a real company or actual legal terms.
+
+**No actual services are offered. No real agreements are being formed.**
+
+This content is protected as parody and satire under free speech principles.
+</div>
+
+---
+
 *Last updated: January 2024*
 
 ## Agreement to Terms

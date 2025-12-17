@@ -6,6 +6,10 @@ description: "Get in touch with RedHorns Incorporated for partnerships, investme
 
 Whether you're an investor seeking returns, a potential partner exploring synergies, or a regulator we haven't met yet, we'd love to hear from you.
 
+{{< contact-form >}}
+
+---
+
 ## Get in Touch
 
 <div class="contact-methods">

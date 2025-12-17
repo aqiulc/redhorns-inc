@@ -3,6 +3,18 @@ title: "Cookie Policy"
 description: "RedHorns Incorporated Cookie Policy"
 ---
 
+<div style="background: #fff3cd; border: 3px solid #856404; padding: 20px; margin: 20px 0; border-radius: 8px;">
+<strong>⚠️ SATIRE DISCLAIMER</strong>
+
+This is a satirical website. RedHorns Incorporated is a fictional company created for entertainment and social commentary purposes. This "Cookie Policy" is parody and does not represent a real company or actual tracking practices.
+
+**No actual services are offered. No real cookies are being set beyond standard website analytics.**
+
+This content is protected as parody and satire under free speech principles.
+</div>
+
+---
+
 *Last updated: January 2024*
 
 ## We Use Cookies
